@@ -27,7 +27,7 @@ Chest Fly Machine <br/>
 Deadlift <br/>
 Lateral Raise <br/>
 Push-up <br/>
-The curated videos can be found under the [data](data/videos) folder of this project.
+The curated videos can be found under the [data](Data/videos) folder of this project.
 
 ## Keypoint extraction
   The Next step will be to extract the keypoints of the workouts so that we can use them in the classification algorithm. i have chosen  Detectron (from Meta) and MediaPipe(from google) for the pose estimation and keypoint extraction process.  Detectron provides only 18 keypoints in 2D and media pipe can provide 32 keypoints in 3D.
@@ -42,8 +42,8 @@ The curated videos can be found under the [data](data/videos) folder of this pro
   [ MediaPipe_dataprep.ipynb](/DataPreparation/MediaPipe_dataprep.ipynb)
 
   the extracted datapoints are stored in the below folders
-  [data detectron](/data/Detectron/Train)
-  [data Mediapipe](/data/MediaPipe/Train)
+  [data detectron](/Data/Detectron/Train)
+  [data Mediapipe](/Data/MediaPipe/Train)
 
 ## **Exploratory data analysis:**
 
@@ -125,7 +125,7 @@ Convolutional Neural network has proven to improve accuracy in classification ta
       Graph Convolutional Neural network (GCN) is the current SOTA model for human action recognition tasks as outlined by this paper https://arxiv.org/pdf/1801.07455 . the ST-GCN (spacio temporal GCN) uses conv2D layers to analyse the keypoints extracted from MediaPipe above in both the spatial per frame and also temporal across multiple frames of a workout video to classify the type of workout .
       <img width="1073" alt="Screenshot 2024-05-29 at 4 47 33 PM" src="https://github.com/krishwin/FitCenter/assets/26986911/4bc0f128-d24c-4009-baa8-57daa40ac8ba">
 
-  Please refer the notebook [ST-GCN Model](/Models/ST_GCB.ipynb) for the implemention of above paper . the Model is able to poduce 98% accuracy in training set but due to lack of training data the validation and evaluation does not yield good results and it can be a future iteam to finetune this model to produce 98% accuracy on Validation and Test set .
+  Please refer the notebook [ST-GCN Model](/Models/ST-GCN.ipynb) for the implemention of above paper . the Model is able to poduce 98% accuracy in training set but due to lack of training data the validation and evaluation does not yield good results and it can be a future iteam to finetune this model to produce 98% accuracy on Validation and Test set .
 
 ## Next Steps
 - Gather more workout video dataset and enlarge the type of workout the models can identify
